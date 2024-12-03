@@ -26,8 +26,26 @@ java -jar target/soap-java-0.0.1-SNAPSHOT.jar
 ```bash
 curl --header "content-type: text/xml" --data @((Get-Content -Raw -Path "request.xml")) http://localhost:8080/ws
 ```
-
+### 6. Expected Response
+```bash
+<SOAP-ENV:Envelope
+	xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+	<SOAP-ENV:Header/>
+	<SOAP-ENV:Body>
+		<ns2:getCountryResponse
+			xmlns:ns2="http://spring.io/guides/gs-producing-web-service">
+			<ns2:country>
+				<ns2:name>Spain</ns2:name>
+				<ns2:population>46704314</ns2:population>
+				<ns2:capital>Madrid</ns2:capital>
+				<ns2:currency>EUR</ns2:currency>
+			</ns2:country>
+		</ns2:getCountryResponse>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+```
 ### DEMO
+![image](https://github.com/user-attachments/assets/e6d942ba-fbe9-407d-927b-202678060168)
 
 ## Authors
 
